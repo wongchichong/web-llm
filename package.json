@@ -7,6 +7,7 @@
   "type": "module",
   "scripts": {
     "build": "rollup -c && ./cleanup-index-js.sh",
+    "build:win": "rollup -c && powershell -ExecutionPolicy Bypass -File cleanup-index-js.ps1",
     "lint": "npx eslint ./src/ ./tests/ ./examples/ && npx prettier ./src/ ./tests/ ./examples/ --check",
     "test": "yarn jest",
     "format": "prettier --write \"./src/\" \"./examples/\" \"./tests/\"",

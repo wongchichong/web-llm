@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import * as webllm from "@mlc-ai/web-llm";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import type { EmbeddingsInterface } from "@langchain/core/embeddings";
@@ -10,6 +11,7 @@ import {
 } from "@langchain/core/runnables";
 
 function setLabel(id: string, text: string) {
+  console.log(id, text);
   const label = document.getElementById(id);
   if (label == null) {
     throw Error("Cannot find label " + id);
@@ -201,8 +203,8 @@ async function simpleRAG() {
   console.log(reply.choices[0].message.content);
 
   /*
-    "The powerhouse of the cell is the mitochondria."
-  */
+            "The powerhouse of the cell is the mitochondria."
+          */
 }
 
 // Select one to run
